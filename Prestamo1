@@ -1,0 +1,59 @@
+package PROG05;
+
+/**
+ *
+ * @author jcala
+ */
+public class Prestamo {
+    //nombre del solicitante, la cantidad de días del préstamo y si fue devuelto o no
+    private String nombre;
+    private int cantDias;
+    private boolean devuelto;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCantDias() {
+        return cantDias;
+    }
+
+    public void setCantDias(int cantDias) {
+        this.cantDias = cantDias;
+    }
+
+    public boolean isDevuelto() {
+        return devuelto;
+    }
+
+    public void setDevuelto(boolean devuelto) {
+        this.devuelto = devuelto;
+    }
+
+    public Prestamo(String nombre, int cantDias, boolean devuelto) {
+        this.nombre = nombre;
+        this.cantDias = cantDias;
+        this.devuelto = devuelto;
+    }
+
+    @Override
+    public String toString() {
+        return "Prestamo{" + "nombre=" + nombre + ", cantDias=" + cantDias + ", devuelto=" + FueDevuelto() + '}';
+    }
+    
+    public String FueDevuelto() 
+    {
+            String mensaje="";
+            if (this.devuelto==true){
+                mensaje="Fue devuelto";
+            }else {
+                mensaje="No fue devuelto";
+            }
+            
+            return mensaje;
+    }
+}
