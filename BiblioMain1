@@ -1,0 +1,16 @@
+ Libro[] libros;
+        public Biblioteca(int cantLibros){
+            libros= new Libro[cantLibros];
+        }
+        public void AgregarLibro(Libro l)
+        {
+            for (int i=0;i<libros.length;i++)
+            {
+                if (libros[i]==null)
+                {
+                    libros[i]=1;
+                    break;
+                }
+                
+            }
+        }
