@@ -1,0 +1,89 @@
+package PROG05;
+
+/**
+ *
+ * @author jcala
+ */
+public class Libro {
+    /*De cada libro conoce su  título, precio de reposición 
+    (para el caso de extravíos o daños) y estado (1: Disponible, 2: prestado, 3: Extraviado).
+    */
+    private String titulo;
+    private float precioReposicion;
+    private String estado;
+    Prestamo[]prestamos;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public float getPrecioReposicion() {
+        return precioReposicion;
+    }
+
+    public void setPrecioReposicion(float precioReposicion) {
+        this.precioReposicion = precioReposicion;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public Prestamo[] getPrestamos() {
+        return prestamos;
+    }
+
+    public void setPrestamos(Prestamo[] prestamos) {
+        this.prestamos = prestamos;
+    }
+
+    public Libro(String titulo, float precioReposicion, String estado, int cantidadPrestamos) {
+        this.titulo = titulo;
+        this.precioReposicion = precioReposicion;
+        this.estado = estado;
+        this.prestamos = new Prestamo[cantidadPrestamos];
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" + "titulo=" + titulo + ", precioReposicion=" + precioReposicion + ", estado=" + Estado() + ", prestamos=" + prestamos.toString() + '}';
+    }
+    
+    public String Estado()
+    {
+        String mensaje="";
+        if (null!=this.estado)switch (this.estado) {
+            case "1":
+                mensaje="Disponible";
+                break;
+            case "2":
+                mensaje="Prestado";
+                break;
+            case "3":
+                mensaje="Extraviado";
+                break;
+            default:
+                break;
+        }
+        return mensaje;
+    }
+    public void AgregarPrestamo(Prestamo p)
+    {
+        for (int i=0;i<prestamos.length;i++)
+        {
+            if (prestamos[i]==null)
+            {
+                prestamos[i]=p;
+                break;
+            }
+        }
+    }
+}
